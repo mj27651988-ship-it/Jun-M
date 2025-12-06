@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BankPro Loan Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: [
+              '-apple-system', 
+              'BlinkMacSystemFont', 
+              '"Segoe UI"', 
+              'Roboto', 
+              '"Helvetica Neue"', 
+              'Arial', 
+              '"Noto Sans"', 
+              'sans-serif', 
+              '"Apple Color Emoji"', 
+              '"Segoe UI Emoji"', 
+              '"Segoe UI Symbol"', 
+              '"Noto Color Emoji"'
+            ],
+          },
+          extend: {
+            colors: {
+              bank: {
+                50: '#f5f7fa',
+                100: '#ebf0f5',
+                200: '#ced9e6',
+                300: '#a1b6cf',
+                400: '#6d8db3',
+                500: '#466d98',
+                600: '#34557e',
+                700: '#2b4465',
+                800: '#253a53',
+                900: '#223246',
+                950: '#172230',
+              },
+              ios: {
+                blue: '#007AFF',
+                gray: '#8E8E93',
+                light: '#F2F2F7',
+                background: '#F5F5F7',
+              }
+            },
+            boxShadow: {
+              'apple-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+              'apple-md': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+              'apple-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+              'apple-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
+              'float': '0 8px 30px rgba(0,0,0,0.06)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        background-color: #F5F5F7; /* Apple background gray */
+      }
+
+      /* Custom scrollbar for sleek look on tablet */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* Hide scrollbar for cleaner UI */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* iOS Style Range Slider */
+      input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+      }
+
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        border: 0.5px solid rgba(0,0,0,0.04);
+      }
+
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #E5E5EA;
+        border-radius: 2px;
+      }
+      
+      input[type=range]:focus {
+        outline: none;
+      }
+
+      /* Animation classes */
+      .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#F5F5F7] text-slate-900 antialiased overflow-hidden selection:bg-blue-100 selection:text-blue-900">
+    <div id="root"></div>
+  </body>
+</html>
